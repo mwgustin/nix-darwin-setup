@@ -32,7 +32,7 @@
         "PluralSight" = 431748264;
       };
       onActivation.cleanup = "zap";
-      onActivation.autoUpdate = true;
+      onActivation.autoUpdate = false;
       onActivation.upgrade = true;
     };
 

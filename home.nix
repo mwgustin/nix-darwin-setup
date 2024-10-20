@@ -1,6 +1,6 @@
 # home.nix
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
 
@@ -8,44 +8,69 @@
   home.packages = [
     pkgs.oh-my-zsh
     pkgs.git
+    pkgs.alacritty
+    pkgs.vscode
+    pkgs.logseq
+
+    pkgs.gh
+    pkgs.github-copilot-cli
+    pkgs.dotnetCorePackages.sdk_8_0_4xx
+    
+    pkgs.google-chrome
+
+    pkgs.k9s
+    pkgs.jq
+    pkgs.go
+    pkgs.ripgrep
+    pkgs.kubernetes-helm
+    pkgs.nodejs_22
+    pkgs.sops
+    pkgs.ack
+    pkgs.terraform
+
   ];
+
+
   programs.zsh = {
     enable = true;
     shellAliases = {
-     ll = "ls -l";
-     update-nix = "darwin-rebuild switch --flake ~/nix";
+      ll = "ls -l";
+      update-nix = "darwin-rebuild switch --flake ~/nix";
 
-     hg = "history | grep -i";
+      hg = "history | grep -i";
 
-     dnb = "dotnet build";
-     dnr = "dotnet run";
-     dns = "dotnet restore";
-     dnsi = "dotnet restore --interactive";
-     dnt = "dotnet test";
+      dnb = "dotnet build";
+      dnr = "dotnet run";
+      dns = "dotnet restore";
+      dnsi = "dotnet restore --interactive";
+      dnt = "dotnet test";
 
-     gaa = "git add -A";
-     gcm = "git commit -m";
-     gps = "git push";
-     gpl = "git pull";
-     gs = "git status";
-     gcam = "git commit -a -m";
-     gca = "git commit -a";
+      gaa = "git add -A";
+      gcm = "git commit -m";
+      gps = "git push";
+      gpl = "git pull";
+      gs = "git status";
+      gcam = "git commit -a -m";
+      gca = "git commit -a";
     };
 
-  oh-my-zsh = {
-    enable = true;
-    plugins = [
-      "git"
-      "dotenv"
-      "dotnet"
-      "docker"
-      "docker-compose"
-      "kubectl"
-      "terraform"
-      "vscode"
-    ];
-    theme = "robbyrussell";
-  };
+    sessionVariables = {
+      PATH = "/opt/homebrew/bin:$PATH";
+    };
+    oh-my-zsh = {
+      enable = true;
+      plugins = [
+        "git"
+        "dotenv"
+        "dotnet"
+        "docker"
+        "docker-compose"
+        "kubectl"
+        "terraform"
+        "vscode"
+      ];
+      theme = "robbyrussell";
+    };
   };
 
   programs.git = {
@@ -57,6 +82,10 @@
       init.defaultBranch = "main";
     };
   };
+
+  # home.activation.artifact-cred-provider = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+  #   sh -c "$(curl -fsSL https://aka.ms/install-artifacts-credprovider.sh)"
+  # '';
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {

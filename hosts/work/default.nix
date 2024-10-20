@@ -1,0 +1,7 @@
+{
+    inputs,
+    globals,
+    overlays,
+    ...
+}:
+

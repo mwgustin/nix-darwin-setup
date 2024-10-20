@@ -4,7 +4,7 @@
 
 {
   imports = [
-    ./modules/default-utils.nix
+    ./modules/user
   ];
 
   home.stateVersion = "23.05";

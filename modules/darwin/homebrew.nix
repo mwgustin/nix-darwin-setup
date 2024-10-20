@@ -22,7 +22,6 @@
         "the-unarchiver"
         "betterdisplay"
         "gitify"
-        # "git-credential-manager"
         # "podman-desktop" #theoretically there's a nixpkg for this, but it wasn't working
       ];
       masApps = {

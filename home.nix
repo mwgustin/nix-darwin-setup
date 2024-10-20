@@ -3,30 +3,17 @@
 { config, pkgs, lib, ... }:
 
 {
+  imports = [
+    ./modules/default-utils.nix
+  ];
 
   home.stateVersion = "23.05";
   home.packages = [
-    pkgs.oh-my-zsh
-    pkgs.git
     pkgs.alacritty
     pkgs.vscode
     pkgs.logseq
-
-    pkgs.gh
-    pkgs.github-copilot-cli
-    pkgs.dotnetCorePackages.sdk_8_0_4xx
     
     pkgs.google-chrome
-
-    pkgs.k9s
-    pkgs.jq
-    pkgs.go
-    pkgs.ripgrep
-    pkgs.kubernetes-helm
-    pkgs.nodejs_22
-    pkgs.sops
-    pkgs.ack
-    pkgs.terraform
 
   ];
 

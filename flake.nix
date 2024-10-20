@@ -36,18 +36,19 @@
           environment.systemPackages = [
             pkgs.mkalias
             pkgs.nixfmt-rfc-style
+
             pkgs.neovim
-
-            pkgs.go-task
-
             pkgs.tmux
-            pkgs.python3
-            pkgs.fira-code
-            pkgs.kubectl
-            pkgs.kind
-            pkgs.git-credential-manager
 
           ];
+
+          fonts = {
+            packages = with pkgs; [
+              (nerdfonts.override { fonts = ["FiraCode" "JetBrainsMono"]; })
+              font-awesome
+              material-design-icons
+            ];
+          };
           
 
           # home-manager configurations

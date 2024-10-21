@@ -5,6 +5,7 @@
 {
   imports = [
     ./modules/user
+    ./modules/dotnet
   ];
 
   home.stateVersion = "23.05";
@@ -16,6 +17,7 @@
     pkgs.google-chrome
     
     pkgs.raycast
+    
 
   ];
 
@@ -78,7 +80,7 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-
+    ".aerospace.toml".source = ./home/.aerospace.toml;
     #".zshrc".source = ~/dotfiles/.zshrc;
     #".shell_config".source = ~/dotfiles/.shell_config;
 

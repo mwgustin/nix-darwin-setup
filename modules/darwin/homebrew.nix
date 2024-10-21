@@ -13,6 +13,9 @@
   config = lib.mkIf config.homebrewConfig.enable {
     homebrew = {
       enable = true;
+      taps = [
+        "nikitabobko/tap"
+      ];
       brews = [
         "mas"
       ];
@@ -23,7 +26,7 @@
         "gitify"
         "elecom-mouse-util"
         "github" #nix pkg is linux only. 
-        
+        "aerospace"
         # "podman-desktop" #theoretically there's a nixpkg for this, but it wasn't working
         
       ];

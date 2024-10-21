@@ -14,17 +14,7 @@
     home.packages = with pkgs;
     [
         #dotnet tools
-            # diffenginetray?
-            # craftsman?
-            # dotnet-ef
-            # dotnet-monitor
-            # reportgenerator
-            # dotnet-stryker
-            # dotnet-trace
-            # dotnet-interactive
-            # puml-gen
-            # livingdoc
-            # upgrade-assistant
+        # find the version on nuget.  When upgrading, the first build will fail b/c the hash won't match. Update the hash and you're good to go
         (pkgs.buildDotnetGlobalTool {
             pname = "Microsoft.dotnet-interactive";
             version = "1.0.522904";
@@ -61,14 +51,58 @@
             dotnet-sdk = pkgs.dotnetCorePackages.sdk_8_0;
             dotnet-runtime = pkgs.dotnetCorePackages.sdk_8_0;
         })
-        # (pkgs.buildDotnetGlobalTool {
-        #     pname = "reportgenerator";
-        #     version = "5.3.11";
-        #     nugetHash = "sha256-96rc9YDqb67lOp5S+cFUHw4XJZjha5tklGvipzzs6pQ=";
-        #     executables = "reportgenerator";
-        #     dotnet-sdk = pkgs.dotnetCorePackages.sdk_8_0;
-        #     dotnet-runtime = pkgs.dotnetCorePackages.sdk_8_0;
-        # })
+        (pkgs.buildDotnetGlobalTool {
+            pname = "dotnet-reportgenerator-globaltool";
+            version = "5.3.11";
+            nugetHash = "sha256-UdDU7vVk4BCp3s6MpsED/4BUdV8V1Ge4/CGd0fPd7ss=";
+            executables = "reportgenerator";
+            dotnet-sdk = pkgs.dotnetCorePackages.sdk_8_0;
+            dotnet-runtime = pkgs.dotnetCorePackages.sdk_8_0;
+        })
+        (pkgs.buildDotnetGlobalTool {
+            pname = "dotnet-ef";
+            version = "8.0.10";
+            nugetHash = "sha256-J12XiJquBNUp3OwHdv43hIFoaJ9dz2P6BEIzgZf+w0I=";
+            dotnet-sdk = pkgs.dotnetCorePackages.sdk_8_0;
+            dotnet-runtime = pkgs.dotnetCorePackages.sdk_8_0;
+        })
+        (pkgs.buildDotnetGlobalTool {
+            pname = "dotnet-monitor";
+            version = "8.0.5";
+            nugetHash = "sha256-+mzgx8f+GOO1BnhVuuxGq+2pkoSK0mUen1LuU0FII6k=";
+            dotnet-sdk = pkgs.dotnetCorePackages.sdk_8_0;
+            dotnet-runtime = pkgs.dotnetCorePackages.sdk_8_0;
+        })
+        (pkgs.buildDotnetGlobalTool {
+            pname = "dotnet-stryker";
+            version = "4.3.0";
+            nugetHash = "sha256-WsLGga2Yw0/t9fveadnMwSu7ujTfmO25iCioUn9zghA=";
+            dotnet-sdk = pkgs.dotnetCorePackages.sdk_8_0;
+            dotnet-runtime = pkgs.dotnetCorePackages.sdk_8_0;
+        })
+        (pkgs.buildDotnetGlobalTool {
+            pname = "dotnet-trace";
+            version = "8.0.547301";
+            nugetHash = "sha256-de+w/XJ9zK8RAVKrdvKzuPv5GOhSH2WCanFGSgyWFuU=";
+            dotnet-sdk = pkgs.dotnetCorePackages.sdk_8_0;
+            dotnet-runtime = pkgs.dotnetCorePackages.sdk_8_0;
+        })
+        (pkgs.buildDotnetGlobalTool {
+            pname = "PlantUmlClassDiagramGenerator";
+            version = "1.4.0";
+            nugetHash = "sha256-77wB/WZhH6f4nHFy8IR6sIE7PdabXlNUMSKQByk+Kc4=";
+            executables = "puml-gen";
+            dotnet-sdk = pkgs.dotnetCorePackages.sdk_8_0;
+            dotnet-runtime = pkgs.dotnetCorePackages.sdk_8_0;
+        })
+        (pkgs.buildDotnetGlobalTool {
+            pname = "upgrade-assistant";
+            version = "0.5.793";
+            nugetHash = "sha256-eOq3wvPSbRY6hPdm+SLGkwiD7JgIYs8k2xPX3NdAdVU=";
+            dotnet-sdk = pkgs.dotnetCorePackages.sdk_8_0;
+            dotnet-runtime = pkgs.dotnetCorePackages.sdk_8_0;
+        })
+
     ];
 
   };

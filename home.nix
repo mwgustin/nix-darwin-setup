@@ -14,6 +14,8 @@
     pkgs.logseq
     
     pkgs.google-chrome
+    
+    pkgs.raycast
 
   ];
 

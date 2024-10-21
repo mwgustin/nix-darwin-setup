@@ -15,14 +15,17 @@
       enable = true;
       brews = [
         "mas"
-        # "podman-tui"
       ];
       casks = [
         "iina"
         "the-unarchiver"
         "betterdisplay"
         "gitify"
+        "elecom-mouse-util"
+        "github" #nix pkg is linux only. 
+        
         # "podman-desktop" #theoretically there's a nixpkg for this, but it wasn't working
+        
       ];
       masApps = {
         "Hidden Bar" = 1452453066;

@@ -47,7 +47,17 @@
 
     sessionVariables = {
       PATH = "/opt/homebrew/bin:$PATH";
+      ZVM_VI_INSERT_ESCAPE_BINDKEY="kj";
+      EDITOR = "nvim";
     };
+    plugins = [
+      {
+        name = "vi-mode";
+        src = pkgs.zsh-vi-mode;
+        file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
+      }
+    ];
+
     oh-my-zsh = {
       enable = true;
       plugins = [

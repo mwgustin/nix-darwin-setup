@@ -17,8 +17,9 @@
     pkgs.google-chrome
     
     pkgs.raycast
-    
 
+    pkgs.nushell
+    
   ];
 
 

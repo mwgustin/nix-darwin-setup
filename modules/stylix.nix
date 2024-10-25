@@ -17,5 +17,16 @@
   stylix.opacity.applications = 0.85;
   stylix.opacity.desktop = 0.85;
   stylix.opacity.terminal = 0.85;
+  stylix.fonts = {
 
+    sansSerif = {
+      package = pkgs.nerdfonts.override { fonts = ["FiraCode" ];};
+      name = "FiraCode Nerd Font Propo";
+    };
+
+    monospace = {
+      package = pkgs.nerdfonts.override { fonts = ["FiraCode"];} ;
+      name = "FiraCode Nerd Font Mono";
+    };
+  };
 }

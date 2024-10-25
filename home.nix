@@ -6,6 +6,7 @@
   imports = [
     ./modules/user
     ./modules/dotnet
+    # ./modules/stylix.nix
   ];
 
   home.stateVersion = "23.05";
@@ -19,15 +20,19 @@
     pkgs.raycast
 
     pkgs.nushell
+
+    pkgs.nixd # nix lsp
+
     
   ];
+
 
 
   programs.zsh = {
     enable = true;
     shellAliases = {
       ll = "ls -l";
-      update-nix = "darwin-rebuild switch --flake ~/nix";
+      update-nix = "darwin-rebuild switch --flake ~/nix#Helo";
 
       hg = "history | grep -i";
 
@@ -83,6 +88,18 @@
     extraConfig = {
       init.defaultBranch = "main";
     };
+  };
+
+  programs.wezterm = {
+    enable = true;
+    enableZshIntegration = true;
+    extraConfig = ''
+    local config = wezterm.config_builder()
+    config.front_end = "WebGpu"
+    config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+    config.use_fancy_tab_bar = true
+    return config
+    '';
   };
 
   # home.activation.artifact-cred-provider = lib.hm.dag.entryAfter [ "writeBoundary" ] ''

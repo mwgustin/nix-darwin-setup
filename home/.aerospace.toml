@@ -219,3 +219,7 @@ run = "move-node-to-workspace Mail"
 [[on-window-detected]]
 if.app-id = 'org.alacritty'
 run = "move-node-to-workspace Term"
+
+[[on-window-detected]]
+if.app-id = 'com.github.wez.wezterm'
+run = "move-node-to-workspace Term"

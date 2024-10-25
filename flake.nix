@@ -2,15 +2,28 @@
   description = "Gustin Darwin Flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nix-darwin.url = "github:LnL7/nix-darwin";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    nixpkgs = {
+      url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    };
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-homebrew = {
+      url = "github:zhaofengli-wip/nix-homebrew";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    mac-app-util.url = "github:hraban/mac-app-util";
+    mac-app-util = 
+    {
+      url = "github:hraban/mac-app-util";
+    };
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     inputs@{
@@ -20,6 +33,7 @@
       nix-homebrew,
       home-manager,
       mac-app-util,
+      ...
     }:
     let
       configuration =
@@ -27,6 +41,7 @@
         {
           imports = [
             ./modules/darwin
+            ./modules/stylix.nix
           ];
           # homebrewConfig.enable = true;
           nixpkgs.config.allowUnfree = true;
@@ -39,6 +54,8 @@
 
             pkgs.neovim
             pkgs.tmux
+        
+            pkgs.base16-schemes
 
           ];
 
@@ -114,33 +131,36 @@
     in
     {
       # Build darwin flake using:
-      # $ darwin-rebuild build --flake .#Mikes-MacBook-Pro
-      darwinConfigurations."Mikes-MacBook-Pro" = nix-darwin.lib.darwinSystem {
-        modules = [
-          configuration
-          nix-homebrew.darwinModules.nix-homebrew
-          {
-            nix-homebrew = {
-              enable = true;
-              enableRosetta = true;
-              user = "mgustin";
-            };
-          }
-	        mac-app-util.darwinModules.default
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.mgustin = import ./home.nix;
-            home-manager.sharedModules = [
-              mac-app-util.homeManagerModules.default
-            ];
-          }
-          
-        ];
+      # $ darwin-rebuild build --flake .#Helo
+      darwinConfigurations = 
+      {
+        Helo = nix-darwin.lib.darwinSystem {
+          modules = [
+            configuration
+            nix-homebrew.darwinModules.nix-homebrew
+            {
+              nix-homebrew = {
+                enable = true;
+                enableRosetta = true;
+                user = "mgustin";
+              };
+            }
+            inputs.stylix.darwinModules.stylix
+            mac-app-util.darwinModules.default
+            home-manager.darwinModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.mgustin = import ./home.nix;
+              home-manager.sharedModules = [
+                mac-app-util.homeManagerModules.default
+              ];
+            }
+          ];
+        };
       };
 
       # Expose the package set, including overlays, for convenience.
-      darwinPackages = self.darwinConfigurations."Mikes-MacBook-Pro".pkgs;
+      darwinPackages = self.darwinConfigurations.Helo.pkgs;
     };
 }

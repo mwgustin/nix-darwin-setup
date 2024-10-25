@@ -14,66 +14,51 @@
     config = lib.mkIf config.default-utils.enable  {
         home.packages = with pkgs; [
             
-            pkgs.oh-my-zsh
+            oh-my-zsh
             
             # git stuff
-            pkgs.git
-            pkgs.gh
-            pkgs.github-copilot-cli
-            pkgs.git-credential-manager
-            # pkgs.github-desktop
+            git
+            gh
+            github-copilot-cli
+            git-credential-manager
+            # github-desktop
             
             #standard language etc
-            pkgs.nodejs_22
-            pkgs.go
-            pkgs.python3
-            pkgs.dotnetCorePackages.sdk_8_0_4xx
-            pkgs.sqlite
-
-
-            #dotnet tools
-            # csharprepl
-            # diffenginetray?
-            # craftsman?
-            # docfx
-            # dotnet-counters
-            # dotnet-coverage
-            # dotnet-ef
-            # dotnet-monitor
-            # reportgenerator
-            # dotnet-stryker
-            # dotnet-trace
-            # dotnet-interactive
-            # puml-gen
-            # livingdoc
-            # upgrade-assistant
+            nodejs_22
+            go
+            python3
+            dotnetCorePackages.sdk_8_0_4xx
+            sqlite
             
-
             #utils
-            pkgs.ack
-            pkgs.age
-            pkgs.chromedriver
-            pkgs.ffmpeg_7
-            pkgs.go-task        
-            pkgs.hyperfine
-            pkgs.jq
-            pkgs.ripgrep
-            pkgs.yq
+            ack
+            age
+            chromedriver
+            ffmpeg_7
+            go-task        
+            hyperfine
+            jq
+            ripgrep
+            yq
+            yazi
+            neofetch
+            btop
+            base16-shell-preview
 
 
             #docker/k8s
-            pkgs.kubectl
-            pkgs.k9s
-            pkgs.kind
-            pkgs.kubernetes-helm
+            kubectl
+            k9s
+            kind
+            kubernetes-helm
 
             #iac
-            pkgs.terraform
-            pkgs.sops
+            terraform
+            sops
 
             #cloud tools
-            pkgs.confluent-cli
-            pkgs.google-cloud-sdk
+            confluent-cli
+            google-cloud-sdk
             # azd
             # azure-cli
             # aztfexport
@@ -81,11 +66,11 @@
             
 
             # CI/CD
-            pkgs.act
-            pkgs.actionlint
-            pkgs.argocd
-            pkgs.dapr-cli
-            pkgs.runme
+            act
+            actionlint
+            argocd
+            dapr-cli
+            runme
 
         ];
     };

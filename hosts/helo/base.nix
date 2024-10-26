@@ -2,7 +2,7 @@
 {
   
   imports = [
-    ../common.nix
+    ../darwin-common
   ];
 
   # home-manager configurations

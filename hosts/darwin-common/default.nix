@@ -1,8 +1,8 @@
 { pkgs, self, ... }:
 {
   imports = [
-    ../modules/darwin
-    ../modules/stylix.nix
+    ../../modules/darwin
+    ../../modules/stylix.nix
   ];
   # homebrewConfig.enable = true;
   nixpkgs.config.allowUnfree = true;

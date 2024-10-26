@@ -1,8 +1,8 @@
 { pkgs, inputs, self, ... }:
 {
   imports = [
-    ./modules/darwin
-    ./modules/stylix.nix
+    ../modules/darwin
+    ../modules/stylix.nix
   ];
   # homebrewConfig.enable = true;
   nixpkgs.config.allowUnfree = true;
@@ -29,14 +29,7 @@
   };
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
-  
-
-  # home-manager configurations
-  users.users.mgustin = {
-    name = "mgustin";
-    home = "/Users/mgustin";
-  };
-  home-manager.backupFileExtension = "backup";
+ 
   nix.configureBuildUsers = true;
 
   # system settings
@@ -45,13 +38,9 @@
     dock.autohide = true;
     dock.tilesize = 32;
     dock.orientation = "left";
-    dock.persistent-apps = [
-      "${pkgs.alacritty}/Applications/Alacritty.app"
-      "${pkgs.logseq}/Applications/Logseq.app"
-      "${pkgs.google-chrome}/Applications/Google Chrome.app"
 
-    ];
     finder.FXPreferredViewStyle = "clmv";
+    finder.AppleShowAllExtensions = true;
     NSGlobalDomain.AppleInterfaceStyle = "Dark";
     NSGlobalDomain.AppleICUForce24HourTime = true;
     NSGlobalDomain.KeyRepeat = 2;
@@ -90,4 +79,13 @@
 
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
+
+  # rosetta pkg compatibility
+  nix.extraOptions = ''
+    extra-platforms = x86_64-darwin aarch64-darwin
+  '';
+
+  #sudo with touch id
+  security.pam.enableSudoTouchIdAuth = true;
+
 }

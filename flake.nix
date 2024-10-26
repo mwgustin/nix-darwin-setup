@@ -50,13 +50,13 @@
     in
     {
       # Build darwin flake using:
-      # $ darwin-rebuild build --flake .#Helo
       darwinConfigurations = 
       {
+        # $ darwin-rebuild switch --flake .#Helo
         Helo = nix-darwin.lib.darwinSystem {
           inherit specialArgs;
           modules = [
-            ./base.nix
+            ./hosts/helo/base.nix
             nix-homebrew.darwinModules.nix-homebrew
             {
               nix-homebrew = {

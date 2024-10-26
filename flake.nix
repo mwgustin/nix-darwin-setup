@@ -36,9 +36,12 @@
       ...
     }:
     let
+      inherit (self) outputs;
+      # inherit (nixpkgs) lib;
       specialArgs = {
         inherit
           inputs
+          outputs
           self
           nix-darwin
           nix-homebrew
@@ -56,7 +59,7 @@
         Helo = nix-darwin.lib.darwinSystem {
           inherit specialArgs;
           modules = [
-            ./hosts/helo
+            ./hosts/helo/base.nix
             nix-homebrew.darwinModules.nix-homebrew
             {
               nix-homebrew = {

@@ -1,10 +1,5 @@
-{ pkgs, inputs, self, ... }:
+{ pkgs, ... }:
 {
-  inherit
-    pkgs
-    inputs
-    self
-    ;
   
   imports = [
     ../common.nix

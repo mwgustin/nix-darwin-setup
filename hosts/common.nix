@@ -1,4 +1,4 @@
-{ pkgs, inputs, self, ... }:
+{ pkgs, self, ... }:
 {
   imports = [
     ../modules/darwin
@@ -28,7 +28,7 @@
     ];
   };
 
-  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+  # nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
  
   nix.configureBuildUsers = true;
 

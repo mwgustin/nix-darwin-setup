@@ -1,6 +1,6 @@
 # home.nix
 
-{ config, pkgs, lib, ... }:
+{ pkgs, lib, config, ... }:
 
 {
   imports = [
@@ -9,24 +9,23 @@
     # ./modules/stylix.nix
   ];
 
+
   home.stateVersion = "23.05";
-  home.packages = [
-    pkgs.alacritty
-    pkgs.vscode
-    pkgs.logseq
+  home.packages = with pkgs; [
+    alacritty
+    vscode
+    logseq
     
-    pkgs.google-chrome
+    google-chrome
     
-    pkgs.raycast
+    raycast
 
-    pkgs.nushell
+    nushell
 
-    pkgs.nixd # nix lsp
-
-    
+    nixd # nix lsp
+  ] ++ lib.optionals (!config.systemConfig.isWork) [
+    cowsay
   ];
-
-
 
   programs.zsh = {
     enable = true;

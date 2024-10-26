@@ -77,6 +77,7 @@
               home-manager.users.mgustin = import ./home.nix;
               home-manager.sharedModules = [
                 mac-app-util.homeManagerModules.default
+                ./hosts/helo/config.nix
               ];
             }
           ];

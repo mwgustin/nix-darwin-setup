@@ -1,4 +1,4 @@
-{ pkgs, self, ... }:
+{ pkgs, self, lib, config, ... }:
 {
   imports = [
     ../../modules/darwin

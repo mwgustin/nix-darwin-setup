@@ -1,14 +1,16 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   
   imports = [
     ../darwin-common
+    ./config.nix
   ];
 
+
   # home-manager configurations
-  users.users.mgustin = {
-    name = "mgustin";
-    home = "/Users/mgustin";
+  users.users."${config.systemConfig.username}" = {
+    name = config.systemConfig.username;
+    home = "/Users/${config.systemConfig.username}";
   };
   home-manager.backupFileExtension = "backup";
 

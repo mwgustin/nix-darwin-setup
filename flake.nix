@@ -56,7 +56,7 @@
         Helo = nix-darwin.lib.darwinSystem {
           inherit specialArgs;
           modules = [
-            ./hosts/helo/base.nix
+            ./hosts/helo
             nix-homebrew.darwinModules.nix-homebrew
             {
               nix-homebrew = {

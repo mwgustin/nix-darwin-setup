@@ -66,7 +66,7 @@
 
   programs.nushell = {
     enable = true;
-  }
+  };
 
   programs.git = {
     enable = true;
@@ -87,6 +87,7 @@
     config.front_end = "WebGpu"
     config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
     config.use_fancy_tab_bar = true
+    config.macos_window_background_blur = 40
     return config
     '';
   };

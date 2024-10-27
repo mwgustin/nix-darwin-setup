@@ -25,14 +25,22 @@
         "betterdisplay"
         "gitify"
         "elecom-mouse-util"
-        "github" #nix pkg is linux only. 
         "aerospace"
         # "podman-desktop" #theoretically there's a nixpkg for this, but it wasn't working
-        
+       
+        # linux only nix pkgs
+        "github" #nix pkg is linux only. 
+        "mongodb-compass" #nix pkg is linux only
+
       ] ++ lib.optionals (!config.systemConfig.isWork) [
         "adobe-creative-cloud"
         "balenaetcher"
         "protokol"
+
+        # linux only nix pkgs
+        "filezilla"
+        "handbrake"
+
       ];
       masApps = {
         "Hidden Bar" = 1452453066;
@@ -40,12 +48,9 @@
         "Hand Mirror" = 1502839586;
         "PR Focuse" = 6449602269;
         "PluralSight" = 431748264;
+      } // lib.optionalAttrs (!config.systemConfig.isWork) {
+        "WireGuard" = 1451685025;
       };
-      if (!config.systemConfig.isWork) then {
-        masApps = {
-          "WireGuard" = 1451685025;
-        }
-      } else {};
       onActivation.cleanup = "zap";
       onActivation.autoUpdate = false;
       onActivation.upgrade = true;

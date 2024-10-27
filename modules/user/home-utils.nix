@@ -11,11 +11,9 @@
       lib.mkEnableOption "enables home utils";
   };
 
-  config = lib.mkIf config.default-utils.enable  {
+  config = lib.mkIf config.home-utils.enable  {
     home.packages = with pkgs; [
       discord
-      filezilla
-      handbrake
       kicad
       lmstudio
       moonlight-qt

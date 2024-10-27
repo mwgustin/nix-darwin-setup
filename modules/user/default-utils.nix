@@ -77,7 +77,6 @@
       runme
 
       #GUI apps
-      mongodb-compass
       alacritty
       vscode
       logseq

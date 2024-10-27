@@ -13,8 +13,7 @@
     pkgs.mkalias
     pkgs.nixfmt-rfc-style
 
-    pkgs.neovim
-    pkgs.tmux
+    
 
     pkgs.base16-schemes
 

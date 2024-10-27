@@ -29,6 +29,10 @@
         "aerospace"
         # "podman-desktop" #theoretically there's a nixpkg for this, but it wasn't working
         
+      ] ++ lib.optionals (!config.systemConfig.isWork) [
+        "adobe-creative-cloud"
+        "balenaetcher"
+        "protokol"
       ];
       masApps = {
         "Hidden Bar" = 1452453066;
@@ -37,6 +41,11 @@
         "PR Focuse" = 6449602269;
         "PluralSight" = 431748264;
       };
+      if (!config.systemConfig.isWork) then {
+        masApps = {
+          "WireGuard" = 1451685025;
+        }
+      } else {};
       onActivation.cleanup = "zap";
       onActivation.autoUpdate = false;
       onActivation.upgrade = true;

@@ -59,13 +59,13 @@
         Helo = nix-darwin.lib.darwinSystem {
           inherit specialArgs;
           modules = [
-            ./hosts/helo/base.nix
+            ./hosts/helo
             nix-homebrew.darwinModules.nix-homebrew
             {
               nix-homebrew = {
                 enable = true;
                 enableRosetta = true;
-                user = "mgustin";
+                user = "mgustin"; # TODO: how to fix this so it gets username from host config
               };
             }
             inputs.stylix.darwinModules.stylix
@@ -74,7 +74,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.mgustin = import ./home.nix;
+              home-manager.users.mgustin = import ./home.nix; # TODO: how to fix this so it gets username from host config
               home-manager.sharedModules = [
                 mac-app-util.homeManagerModules.default
                 ./hosts/helo/config.nix

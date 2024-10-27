@@ -11,21 +11,6 @@
 
 
   home.stateVersion = "23.05";
-  home.packages = with pkgs; [
-    alacritty
-    vscode
-    logseq
-    
-    google-chrome
-    
-    raycast
-
-    nushell
-
-    nixd # nix lsp
-  ] ++ lib.optionals (!config.systemConfig.isWork) [
-    cowsay
-  ];
 
   programs.zsh = {
     enable = true;
@@ -79,6 +64,10 @@
     };
   };
 
+  programs.nushell = {
+    enable = true;
+  }
+
   programs.git = {
     enable = true;
     userName = "Mike Gustin";
@@ -92,6 +81,7 @@
   programs.wezterm = {
     enable = true;
     enableZshIntegration = true;
+    # need to set webGpu frontend or it gets mangled on mac`
     extraConfig = ''
     local config = wezterm.config_builder()
     config.front_end = "WebGpu"

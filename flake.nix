@@ -82,9 +82,37 @@
             }
           ];
         };
+
+        # $ darwin-rebuild switch --flake .#Helo
+        Apollo = nix-darwin.lib.darwinSystem {
+          inherit specialArgs;
+          modules = [
+            ./hosts/apollo
+            nix-homebrew.darwinModules.nix-homebrew
+            {
+              nix-homebrew = {
+                enable = true;
+                enableRosetta = true;
+                user = "gustin"; # TODO: how to fix this so it gets username from host config
+              };
+            }
+            inputs.stylix.darwinModules.stylix
+            mac-app-util.darwinModules.default
+            home-manager.darwinModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.gustin = import ./home.nix; # TODO: how to fix this so it gets username from host config
+              home-manager.sharedModules = [
+                mac-app-util.homeManagerModules.default
+                ./hosts/apollo/config.nix
+              ];
+            }
+          ];
+        };
       };
 
       # Expose the package set, including overlays, for convenience.
-      darwinPackages = self.darwinConfigurations.Helo.pkgs;
+      darwinPackages = self.darwinConfigurations.Helo.pkgs; # not sure how to switch this for other configurations?
     };
 }

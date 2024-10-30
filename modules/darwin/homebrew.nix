@@ -32,6 +32,8 @@
         "github" #nix pkg is linux only. 
         "mongodb-compass" #nix pkg is linux only
 
+        "logseq" #nixpkg causing issues??
+
       ] ++ lib.optionals (!config.systemConfig.isWork) [
         "adobe-creative-cloud"
         "balenaetcher"

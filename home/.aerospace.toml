@@ -135,7 +135,7 @@ alt-e = 'workspace E'
 alt-g = 'workspace G'
 alt-i = 'workspace I'
 alt-m = 'workspace M'
-alt-n = 'workspace N'
+alt-n = 'workspace Notes'
 alt-o = 'workspace O'
 alt-p = 'workspace P'
 alt-q = 'workspace Q'
@@ -168,7 +168,7 @@ alt-shift-e = 'move-node-to-workspace E'
 alt-shift-g = 'move-node-to-workspace G'
 alt-shift-i = 'move-node-to-workspace I'
 alt-shift-m = 'move-node-to-workspace M'
-alt-shift-n = 'move-node-to-workspace N'
+alt-shift-n = 'move-node-to-workspace Notes'
 alt-shift-o = 'move-node-to-workspace O'
 alt-shift-p = 'move-node-to-workspace P'
 alt-shift-q = 'move-node-to-workspace Q'
@@ -208,6 +208,7 @@ alt-shift-l = ['join-with right', 'mode main']
 
 
 # bind apps to workspaces
+# aerospace list-apps
 [[on-window-detected]]
 if.app-id = 'Cisco-Systems.Spark'
 run = "move-node-to-workspace Chat"
@@ -223,3 +224,7 @@ run = "move-node-to-workspace Term"
 [[on-window-detected]]
 if.app-id = 'com.github.wez.wezterm'
 run = "move-node-to-workspace Term"
+
+[[on-window-detected]]
+if.app-id = 'com.electron.logseq'
+run = "move-node-to-workspace Notes"

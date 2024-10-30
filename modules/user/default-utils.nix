@@ -13,7 +13,7 @@
 
   config = lib.mkIf config.default-utils.enable  {
     home.packages = with pkgs; [
-      neovim
+      # neovim
       tmux
       oh-my-zsh
       
@@ -79,11 +79,10 @@
       #GUI apps
       alacritty
       vscode
-      logseq
 
-    google-chrome
+      google-chrome
 
-    raycast
+      raycast
 
 
 

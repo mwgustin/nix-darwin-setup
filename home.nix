@@ -77,7 +77,13 @@
       init.defaultBranch = "main";
     };
   };
+  
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    
 
+  };
   programs.wezterm = {
     enable = true;
     enableZshIntegration = true;
@@ -99,6 +105,7 @@
   # plain files is through 'home.file'.
   home.file = {
     ".aerospace.toml".source = ./home/.aerospace.toml;
+    # ".logseq".source = ./home/.logseq;
     #".zshrc".source = ~/dotfiles/.zshrc;
     #".shell_config".source = ~/dotfiles/.shell_config;
 

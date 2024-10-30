@@ -15,8 +15,8 @@
   home-manager.backupFileExtension = "backup";
 
   system.defaults.dock.persistent-apps = [
-    "${pkgs.alacritty}/Applications/WezTerm.app"
-    "${pkgs.logseq}/Applications/Logseq.app"
+    "${pkgs.wezterm}/Applications/WezTerm.app"
+    "/Applications/Logseq.app"
     "${pkgs.google-chrome}/Applications/Google Chrome.app"
   ];
 }

@@ -63,6 +63,8 @@
       #cloud tools
       confluent-cli
       google-cloud-sdk
+
+      #azure stuff is broken in nixpkg right now so using homebrew. 
       # azd
       # azure-cli
       # aztfexport

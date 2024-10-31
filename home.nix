@@ -16,7 +16,7 @@
     enable = true;
     shellAliases = {
       ll = "ls -l";
-      update-nix = "darwin-rebuild switch --flake ~/nix#Helo";
+      rebuild-switch = "darwin-rebuild switch --flake ~/nix#Helo";
 
       hg = "history | grep -i";
 

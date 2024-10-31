@@ -15,9 +15,17 @@
       enable = true;
       taps = [
         "nikitabobko/tap"
+        "azure/homebrew-azd"
+        "azure/functions"
       ];
       brews = [
         "mas"
+
+        #future nixpkgs, but broken python stuff right now
+        "azure-cli"
+        "azd"
+        "aztfexport"
+        "azure-functions-core-tools@4"
       ];
       casks = [
         "iina"

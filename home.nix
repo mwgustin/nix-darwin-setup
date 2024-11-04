@@ -33,6 +33,8 @@
       gs = "git status";
       gcam = "git commit -a -m";
       gca = "git commit -a";
+
+      docker="podman";
     };
 
     sessionVariables = {

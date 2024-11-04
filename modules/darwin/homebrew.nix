@@ -26,6 +26,9 @@
         "azd"
         "aztfexport"
         "azure-functions-core-tools@4"
+        
+        "podman"
+        "podman-compose"
       ];
       casks = [
         "iina"
@@ -34,7 +37,7 @@
         "gitify"
         "elecom-mouse-util"
         "aerospace"
-        # "podman-desktop" #theoretically there's a nixpkg for this, but it wasn't working
+        "podman-desktop" #theoretically there's a nixpkg for this, but it wasn't working
        
         # linux only nix pkgs
         "github" #nix pkg is linux only. 

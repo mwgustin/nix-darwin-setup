@@ -29,6 +29,8 @@
         
         "podman"
         "podman-compose"
+        # "docker"
+
       ];
       casks = [
         "iina"
@@ -44,6 +46,8 @@
         "mongodb-compass" #nix pkg is linux only
 
         "logseq" #nixpkg causing issues??
+
+        "windows-app" #microsoft remote desktop
 
       ] ++ lib.optionals (!config.systemConfig.isWork) [
         "adobe-creative-cloud"

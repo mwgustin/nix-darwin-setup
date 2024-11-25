@@ -5,13 +5,16 @@
   # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-dark.yaml";
   # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-macchiato.yaml";
   # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/default-dark.yaml";
+  # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/default-dark.yaml";
   # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/edge-dark.yaml";
   # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/heetch.yaml";
   # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/harmonic16-dark.yaml";
   # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
   # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/github.yaml"; #no dark version??
   # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/google-dark.yaml";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
+  # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/kimber.yaml";
+  # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/material.yaml";
   # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/monokai.yaml";
   # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark.yaml";
   # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/onedark-dark.yaml";
@@ -33,4 +36,4 @@
       name = "FiraCode Nerd Font Mono";
     };
   };
-}
+} 

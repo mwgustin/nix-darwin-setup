@@ -35,13 +35,22 @@
       gca = "git commit -a";
 
       docker="podman";
+
+      # tasks
+      t = "task";
+      tt = "task test";
+      ttr = "task test-report";
+
     };
 
     sessionVariables = {
       PATH = "/opt/homebrew/bin:$PATH";
       ZVM_VI_INSERT_ESCAPE_BINDKEY="kj";
       EDITOR = "nvim";
+      DiffEngine_ToolOrder = "VisualStudioCode";
+      XDG_HOME_CONFIG = "$HOME/.config";
     };
+    
     plugins = [
       {
         name = "vi-mode";
@@ -78,7 +87,15 @@
     extraConfig = {
       init.defaultBranch = "main";
     };
+    
+    ignores = [
+      ".DS_Store"
+      "flake.nix"
+    ];
   };
+
+
+# programs.git.ignores
   
   programs.neovim = {
     enable = true;
@@ -98,6 +115,11 @@
     config.macos_window_background_blur = 40
     return config
     '';
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
   };
 
   # home.activation.artifact-cred-provider = lib.hm.dag.entryAfter [ "writeBoundary" ] ''

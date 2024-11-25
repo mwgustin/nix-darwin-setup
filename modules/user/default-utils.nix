@@ -28,7 +28,10 @@
       nodejs_22
       go
       python3
-      dotnetCorePackages.sdk_8_0_4xx
+      (with dotnetCorePackages; combinePackages [
+        sdk_8_0_4xx
+        sdk_9_0
+      ])
       sqlite
       
       #utils
@@ -55,6 +58,9 @@
       k9s
       kind
       kubernetes-helm
+      # colima
+
+      qemu
 
       #iac
       terraform
@@ -85,6 +91,8 @@
       google-chrome
 
       raycast
+
+      # azuredatastudio
 
     ];
   };

@@ -102,6 +102,13 @@
             dotnet-sdk = pkgs.dotnetCorePackages.sdk_8_0;
             dotnet-runtime = pkgs.dotnetCorePackages.sdk_8_0;
         })
+        (pkgs.buildDotnetGlobalTool {
+            pname = "dotnet-dump";
+            version = "8.0.547301";
+            nugetHash = "sha256-Yxl4vO7y8/Igxhw6VWFA0ZYbC7gKHoyNUkzeeFu81wQ=";
+            dotnet-sdk = pkgs.dotnetCorePackages.sdk_8_0;
+            dotnet-runtime = pkgs.dotnetCorePackages.sdk_8_0;
+        })
 
     ];
 

@@ -41,10 +41,13 @@
       tt = "task test";
       ttr = "task test-report";
 
+      # pto analyzer
+      pto = "pto-analyzer";
+
     };
 
+    
     sessionVariables = {
-      PATH = "/opt/homebrew/bin:$PATH";
       ZVM_VI_INSERT_ESCAPE_BINDKEY="kj";
       EDITOR = "nvim";
       DiffEngine_ToolOrder = "VisualStudioCode";
@@ -73,6 +76,14 @@
       ];
       theme = "robbyrussell";
     };
+
+    initExtra = "
+
+# initExtra 
+export PATH=/Users/${config.systemConfig.username}/bin:$PATH
+
+    ";
+
   };
 
   programs.nushell = {

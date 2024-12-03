@@ -79,9 +79,22 @@
 
     initExtra = "
 
-# initExtra 
+# --- initExtra
+
+#custom bins
 export PATH=/Users/${config.systemConfig.username}/bin:$PATH
 
+#yazi setup
+function y() {
+	local tmp=\"$(mktemp -t \"yazi-cwd.XXXXXX\")\" cwd
+	yazi \"$@\" --cwd-file=\"$tmp\"
+	if cwd=\"$(command cat -- \"$tmp\")\" && [ -n \"$cwd\" ] && [ \"$cwd\" != \"$PWD\" ]; then
+		builtin cd -- \"$cwd\"
+	fi
+	rm -f -- \"$tmp\"
+}
+
+# --- end initExtra
     ";
 
   };
@@ -92,8 +105,8 @@ export PATH=/Users/${config.systemConfig.username}/bin:$PATH
 
   programs.git = {
     enable = true;
-    userName = "Mike Gustin";
-    userEmail = "gustin.mike@gmail.com";
+    userName = config.systemConfig.git_userName;
+    userEmail = config.systemConfig.git_userEmail;
 
     extraConfig = {
       init.defaultBranch = "main";
@@ -132,6 +145,20 @@ export PATH=/Users/${config.systemConfig.username}/bin:$PATH
     enable = true;
     enableZshIntegration = true;
   };
+
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+    enableNushellIntegration = true;
+  };
+
+  programs.yazi = {
+    enable = true;
+    enableZshIntegration = true;
+    enableNushellIntegration = true;
+    
+  };
+
 
   # home.activation.artifact-cred-provider = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
   #   sh -c "$(curl -fsSL https://aka.ms/install-artifacts-credprovider.sh)"

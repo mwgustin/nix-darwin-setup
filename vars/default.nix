@@ -9,5 +9,12 @@
       type = lib.types.str;
       default = "mgustin";
     };
+    systemConfig.git_userName = lib.mkOption {
+      type = lib.types.str;
+      default = "Mike Gustin";
+    };
+    systemConfig.git_userEmail = lib.mkOption {
+      type = lib.types.str;
+    };
   };
 }

@@ -51,6 +51,7 @@
   
       nixd # nix lsp
 
+      bfg-repo-cleaner
 
 
       #docker/k8s

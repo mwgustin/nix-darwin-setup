@@ -15,5 +15,7 @@ Hosts:
 ## Setup (tbd)
 - Install Nix
 - Install nix-darwin
+  - nix run nix-darwin -- switch --flake ~/nix#<machineName>
 - Enable rosetta (`softwareupdate --install-rosetta --agree-to-license`)
 - darwin-rebuild given system
+

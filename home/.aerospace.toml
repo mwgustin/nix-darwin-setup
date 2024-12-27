@@ -134,7 +134,7 @@ alt-e = 'workspace E'
 # alt-f = 'workspace F'
 alt-g = 'workspace G'
 alt-i = 'workspace I'
-alt-m = 'workspace M'
+alt-m = 'workspace Music'
 alt-n = 'workspace Notes'
 alt-o = 'workspace O'
 alt-p = 'workspace P'
@@ -167,7 +167,7 @@ alt-shift-e = 'move-node-to-workspace E'
 # alt-shift-f = 'move-node-to-workspace F'
 alt-shift-g = 'move-node-to-workspace G'
 alt-shift-i = 'move-node-to-workspace I'
-alt-shift-m = 'move-node-to-workspace M'
+alt-shift-m = 'move-node-to-workspace Music'
 alt-shift-n = 'move-node-to-workspace Notes'
 alt-shift-o = 'move-node-to-workspace O'
 alt-shift-p = 'move-node-to-workspace P'
@@ -212,6 +212,14 @@ alt-shift-l = ['join-with right', 'mode main']
 [[on-window-detected]]
 if.app-id = 'Cisco-Systems.Spark'
 run = "move-node-to-workspace Chat"
+
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+run = "move-node-to-workspace Chat"
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = "move-node-to-workspace Music"
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.Outlook'

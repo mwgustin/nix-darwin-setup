@@ -85,7 +85,7 @@
           ];
         };
 
-        # $ darwin-rebuild switch --flake .#Helo
+        # $ darwin-rebuild switch --flake .#Apollo
         Apollo = nix-darwin.lib.darwinSystem {
           inherit specialArgs;
           modules = [
@@ -96,6 +96,7 @@
                 enable = true;
                 enableRosetta = true;
                 user = "gustin"; # TODO: how to fix this so it gets username from host config
+                autoMigrate = true;
               };
             }
             inputs.stylix.darwinModules.stylix
@@ -113,8 +114,11 @@
           ];
         };
       };
-
+      
       # Expose the package set, including overlays, for convenience.
-      darwinPackages = self.darwinConfigurations.Helo.pkgs; # not sure how to switch this for other configurations?
+      darwinPackages = {
+        Helo = self.darwinConfigurations.Helo.system;
+        Apollo = self.darwinConfigurations.Apollo.system;
+      };
     };
 }

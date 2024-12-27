@@ -159,6 +159,12 @@ function y() {
     
   };
 
+  programs.atuin = {
+    enable = true;
+    enableZshIntegration = true;
+    enableNushellIntegration = true;
+  };
+
 
   # home.activation.artifact-cred-provider = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
   #   sh -c "$(curl -fsSL https://aka.ms/install-artifacts-credprovider.sh)"

@@ -55,8 +55,14 @@
         "protokol"
 
         # linux only nix pkgs
-        "filezilla"
+        # "filezilla"
         "handbrake"
+        "orcaslicer"
+        "steam"
+        "kicad"
+        "obs"
+        "vcv-rack"
+        "vlc"
 
       ];
       masApps = {

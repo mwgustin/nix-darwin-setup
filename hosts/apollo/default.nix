@@ -16,8 +16,9 @@
 
   system.defaults.dock.persistent-apps = [
     "${pkgs.alacritty}/Applications/WezTerm.app"
-    "${pkgs.logseq}/Applications/Logseq.app"
+    "/Applications/Logseq.app"
     "${pkgs.google-chrome}/Applications/Google Chrome.app"
-    "${pkgs.google-chrome}/Applications/Discord.app"
+    "${pkgs.discord}/Applications/Discord.app"
+    "${pkgs.spotify}/Applications/Spotify.app"
   ];
 }

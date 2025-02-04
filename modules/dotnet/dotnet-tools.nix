@@ -11,7 +11,7 @@
   };
 
   config = lib.mkIf config.dotnet-tools.enable {
-    home.packages = with pkgs;
+    home.packages =  
     [
         #dotnet tools
         # find the version on nuget.  When upgrading, the first build will fail b/c the hash won't match. Update the hash and you're good to go

@@ -29,6 +29,7 @@
       go
       python3
       (with dotnetCorePackages; combinePackages [
+        sdk_6_0_1xx
         sdk_8_0_4xx
         sdk_9_0
       ])
@@ -95,6 +96,9 @@
 
       # azuredatastudio
 
+
+      ## smee proxy client
+      gosmee
     ];
   };
 }

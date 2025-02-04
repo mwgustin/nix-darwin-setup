@@ -109,6 +109,14 @@
             dotnet-sdk = pkgs.dotnetCorePackages.sdk_8_0;
             dotnet-runtime = pkgs.dotnetCorePackages.sdk_8_0;
         })
+        (pkgs.buildDotnetGlobalTool {
+            pname = "dotnet-outdated-tool";
+            version = "4.6.4";
+            executables = "dotnet-outdated";
+            nugetHash = "sha256-5IL05jnSkSsb7bJr6JFdudRAPju60d28PnkjEl5sUS0=";
+            dotnet-sdk = pkgs.dotnetCorePackages.sdk_8_0;
+            dotnet-runtime = pkgs.dotnetCorePackages.sdk_8_0;
+        })
 
     ];
 

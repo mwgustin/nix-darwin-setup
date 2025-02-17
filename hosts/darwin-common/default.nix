@@ -21,7 +21,8 @@
 
   fonts = {
     packages = with pkgs; [
-      (nerdfonts.override { fonts = ["FiraCode" "JetBrainsMono"]; })
+      nerd-fonts.fira-code
+      nerd-fonts.jetbrains-mono
       font-awesome
       material-design-icons
     ];
@@ -29,8 +30,6 @@
 
   # nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
  
-  nix.configureBuildUsers = true;
-
   nix.linux-builder.enable = true;
 
   # system settings
@@ -61,8 +60,7 @@
   };
 
   # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
-  # nix.package = pkgs.nix;
+  nix.enable = true;
 
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";

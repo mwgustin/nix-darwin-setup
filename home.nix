@@ -141,6 +141,12 @@ function y() {
     '';
   };
 
+  # programs.ghostty = {
+  #   enable = true;
+  #   enableZshIntegration = true;
+
+  # };
+
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
@@ -163,6 +169,10 @@ function y() {
     enable = true;
     enableZshIntegration = true;
     enableNushellIntegration = true;
+    # daemon = true;
+    settings = {
+      db_path = "~/.history.db";
+    };
   };
 
 

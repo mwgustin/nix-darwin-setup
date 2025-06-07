@@ -32,20 +32,24 @@
         # "docker"
 
       ];
-      casks = [
+      casks = [        
         "iina"
         "the-unarchiver"
         "betterdisplay"
         "gitify"
-        "elecom-mouse-util"
+        # "elecom-mouse-util"
         "aerospace"
         "podman-desktop" #theoretically there's a nixpkg for this, but it wasn't working
+
+        # extension issues and I don't want to deal with it right now.
+        "visual-studio-code"
        
         # linux only nix pkgs
         "github" #nix pkg is linux only. 
         "mongodb-compass" #nix pkg is linux only
 
         "logseq" #nixpkg causing issues??
+
 
         "windows-app" #microsoft remote desktop
 
@@ -74,7 +78,7 @@
       } // lib.optionalAttrs (!config.systemConfig.isWork) {
         "WireGuard" = 1451685025;
       };
-      onActivation.cleanup = "zap";
+      # onActivation.cleanup = "zap";
       onActivation.autoUpdate = false;
       onActivation.upgrade = true;
     };

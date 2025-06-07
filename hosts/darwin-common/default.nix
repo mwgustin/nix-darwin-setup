@@ -7,6 +7,7 @@
   # homebrewConfig.enable = true;
   nixpkgs.config.allowUnfree = true;
 
+
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [
@@ -85,7 +86,7 @@
   '';
 
   #sudo with touch id
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   # alias/activation scripts
   system.activationScripts.applications.text = let
@@ -94,6 +95,8 @@
     paths = config.environment.systemPackages;
     pathsToLink = "/Applications";
   };
+
+
 in
   pkgs.lib.mkForce ''
   # Set up applications.

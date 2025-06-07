@@ -28,11 +28,11 @@
       nodejs_22
       go
       python3
-      (with dotnetCorePackages; combinePackages [
-        # sdk_6_0_1xx
-        sdk_8_0_4xx
-        sdk_9_0
-      ])
+      # (with dotnetCorePackages; combinePackages [
+      #   # sdk_6_0_1xx
+      #   sdk_8_0_4xx
+      #   sdk_9_0
+      # ])
       sqlite
       
       #utils
@@ -87,14 +87,16 @@
       runme
 
       #GUI apps
-      alacritty
-      vscode
+      # alacritty
+      # vscode
 
       google-chrome
 
       raycast
 
       # azuredatastudio
+
+      plantuml
 
 
       ## smee proxy client

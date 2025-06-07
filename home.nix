@@ -9,7 +9,6 @@
     # ./modules/stylix.nix
   ];
 
-
   home.stateVersion = "23.05";
 
   programs.zsh = {
@@ -52,6 +51,7 @@
       EDITOR = "nvim";
       DiffEngine_ToolOrder = "VisualStudioCode";
       XDG_HOME_CONFIG = "$HOME/.config";
+      DOTNET_ROOT = "/usr/local/share/dotnet";
     };
     
     plugins = [
@@ -82,7 +82,7 @@
 # --- initExtra
 
 #custom bins
-export PATH=/Users/${config.systemConfig.username}/bin:$PATH
+export PATH=/Users/${config.systemConfig.username}/bin:/usr/local/share/dotnet:~/.dotnet/tools:$PATH
 
 #yazi setup
 function y() {
@@ -110,6 +110,7 @@ function y() {
 
     extraConfig = {
       init.defaultBranch = "main";
+      push.autoSetupRemote = true;
     };
     
     ignores = [
@@ -173,6 +174,11 @@ function y() {
     settings = {
       db_path = "~/.history.db";
     };
+  };
+
+  programs.java = {
+    enable = true;
+    package = pkgs.jre;
   };
 
 

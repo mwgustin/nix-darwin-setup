@@ -25,7 +25,6 @@
       # github-desktop
       
       #standard language etc
-      nodejs_22
       go
       python3
       # (with dotnetCorePackages; combinePackages [
@@ -101,6 +100,8 @@
 
       ## smee proxy client
       gosmee
+
+      mkcert
     ];
   };
 }

@@ -27,9 +27,11 @@
         "aztfexport"
         "azure-functions-core-tools@4"
         
-        "podman"
-        "podman-compose"
+        # "podman"
+        # "podman-compose"
         # "docker"
+
+        "nvm"
 
       ];
       casks = [        
@@ -39,7 +41,8 @@
         "gitify"
         # "elecom-mouse-util"
         "aerospace"
-        "podman-desktop" #theoretically there's a nixpkg for this, but it wasn't working
+        # "podman-desktop" #theoretically there's a nixpkg for this, but it wasn't working
+        "docker-desktop"
 
         # extension issues and I don't want to deal with it right now.
         "visual-studio-code"

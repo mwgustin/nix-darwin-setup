@@ -25,6 +25,8 @@
       dnsi = "dotnet restore --interactive";
       dnt = "dotnet test";
 
+      dnx = "dotnet dnx";
+
       gaa = "git add -A";
       gcm = "git commit -m";
       gps = "git push";
@@ -33,7 +35,7 @@
       gcam = "git commit -a -m";
       gca = "git commit -a";
 
-      docker="podman";
+      # docker="podman";
 
       # tasks
       t = "task";
@@ -42,6 +44,7 @@
 
       # pto analyzer
       pto = "pto-analyzer";
+      jwt = "JwtDecoder.Cli";
 
     };
 
@@ -83,6 +86,7 @@
 
 #custom bins
 export PATH=/Users/${config.systemConfig.username}/bin:/usr/local/share/dotnet:~/.dotnet/tools:$PATH
+export PATH=/Users/${config.systemConfig.username}/.aspire/bin:$PATH
 
 #yazi setup
 function y() {
@@ -93,6 +97,15 @@ function y() {
 	fi
 	rm -f -- \"$tmp\"
 }
+
+#cd up directory keybind
+
+bindkey -s '^[[1;3A' '^qcd ..\n'
+
+# NVM setup
+export NVM_DIR=\"/Users/${config.systemConfig.username}/.nvm\"
+    [ -s \"$HOMEBREW_PREFIX/opt/nvm/nvm.sh\" ] && \. \"$HOMEBREW_PREFIX/opt/nvm/nvm.sh\" # This loads nvm
+    [ -s \"$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm\" ] && \. \"$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm\" # This loads nvm bash_completion
 
 # --- end initExtra
     ";

@@ -13,7 +13,7 @@
     home = "/Users/${config.systemConfig.username}";
   };
   home-manager.backupFileExtension = "backup";
-
+  system.primaryUser = "gustin";
   system.defaults.dock.persistent-apps = [
     "${pkgs.alacritty}/Applications/WezTerm.app"
     "/Applications/Logseq.app"

@@ -14,10 +14,9 @@
   config = lib.mkIf config.home-utils.enable  {
     home.packages = with pkgs; [
       discord
-      lmstudio
-      moonlight-qt
+      # moonlight-qt  # Disabled on macOS due to Wayland dependency
       spotify
-      tytools
+      # tytools
 
     ];
   };

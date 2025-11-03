@@ -20,7 +20,7 @@
       # git stuff
       git
       gh
-      github-copilot-cli
+      gh-copilot
       git-credential-manager
       # github-desktop
       

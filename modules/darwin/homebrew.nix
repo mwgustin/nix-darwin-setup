@@ -70,6 +70,8 @@
         "obs"
         "vcv-rack"
         "vlc"
+        
+        "moonlight"
 
       ];
       masApps = {

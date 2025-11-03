@@ -222,6 +222,10 @@ if.app-id = 'com.spotify.client'
 run = "move-node-to-workspace Music"
 
 [[on-window-detected]]
+if.app-name-regex-substring = 'Music'
+run = "move-node-to-workspace Music"
+
+[[on-window-detected]]
 if.app-id = 'com.microsoft.Outlook'
 run = "move-node-to-workspace Mail"
 

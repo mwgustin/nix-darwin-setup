@@ -80,7 +80,7 @@
       theme = "robbyrussell";
     };
 
-    initExtra = "
+    initContent = "
 
 # --- initExtra
 
@@ -118,13 +118,18 @@ export NVM_DIR=\"/Users/${config.systemConfig.username}/.nvm\"
 
   programs.git = {
     enable = true;
-    userName = config.systemConfig.git_userName;
-    userEmail = config.systemConfig.git_userEmail;
-
-    extraConfig = {
+    settings = {
+      user = {
+        email = config.systemConfig.git_userName;
+        name = config.systemConfig.git_userEmail;
+      };
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
     };
+    # userName = config.systemConfig.git_userName;
+    # userEmail = config.systemConfig.git_userEmail;
+    # user = {
+    # };
     
     ignores = [
       ".DS_Store"

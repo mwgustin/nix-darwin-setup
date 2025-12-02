@@ -17,6 +17,7 @@
         "nikitabobko/tap"
         "azure/homebrew-azd"
         "azure/functions"
+        "confluentinc/tap"
       ];
       brews = [
         "mas"
@@ -32,6 +33,9 @@
         # "docker"
 
         "nvm"
+
+        # conlfuent cli
+        "cli"
 
       ];
       casks = [        

@@ -68,7 +68,7 @@
       sops
 
       #cloud tools
-      confluent-cli
+      # confluent-cli
       google-cloud-sdk
 
       #azure stuff is broken in nixpkg right now so using homebrew. 

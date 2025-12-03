@@ -120,8 +120,8 @@ export NVM_DIR=\"/Users/${config.systemConfig.username}/.nvm\"
     enable = true;
     settings = {
       user = {
-        email = config.systemConfig.git_userName;
-        name = config.systemConfig.git_userEmail;
+        email = config.systemConfig.git_userEmail;
+        name = config.systemConfig.git_userName;
       };
       init.defaultBranch = "main";
       push.autoSetupRemote = true;

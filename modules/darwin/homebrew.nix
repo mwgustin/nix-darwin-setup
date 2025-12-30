@@ -77,13 +77,18 @@
         
         "moonlight"
 
+        "freecad"
+
       ];
       masApps = {
         "Hidden Bar" = 1452453066;
         #"Xcode" = 497799835;
         "Hand Mirror" = 1502839586;
         "PR Focuse" = 6449602269;
-        "PluralSight" = 431748264;
+
+        # old pluralsight (431xxx) is deprecated, but new one (673xxx) can't be installed by mas
+        # "PluralSight" = 431748264;
+        # "Pluralsight" = 6737839588;
       } // lib.optionalAttrs (!config.systemConfig.isWork) {
         "WireGuard" = 1451685025;
       };

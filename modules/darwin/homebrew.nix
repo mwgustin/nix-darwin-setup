@@ -37,6 +37,12 @@
         # conlfuent cli
         "cli"
 
+        "lazygit"
+        "sqlite"
+        "pulumi"
+        "trivy"
+        
+
       ];
       casks = [        
         "iina"
@@ -50,6 +56,8 @@
 
         # extension issues and I don't want to deal with it right now.
         "visual-studio-code"
+        
+        "copilot-cli"
        
         # linux only nix pkgs
         "github" #nix pkg is linux only. 
@@ -59,6 +67,7 @@
 
 
         "windows-app" #microsoft remote desktop
+        "powershell"
 
       ] ++ lib.optionals (!config.systemConfig.isWork) [
         "adobe-creative-cloud"

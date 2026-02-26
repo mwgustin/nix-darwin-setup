@@ -76,7 +76,7 @@
 
         # linux only nix pkgs
         # "filezilla"
-        "handbrake"
+        "handbrake-app"
         "orcaslicer"
         "steam"
         "kicad"
@@ -87,6 +87,12 @@
         "moonlight"
 
         "freecad"
+
+        "mqttx"
+
+        "openscad"
+
+        "qdirstat"
 
       ];
       masApps = {
